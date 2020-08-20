@@ -38,7 +38,7 @@ async def help_message_f(client, message):
     #message_id = 99
     # display the /help
     
-    #await message.reply_text("I've nothing to say", disable_web_page_preview=True)
+    await message.reply_text("Welcome to the leeching group.\nEvery bot will help you to put magnet/direct link's file to our Team-Drive.\nRead the pinned message for more.", disable_web_page_preview=True)
 
 
 async def rename_message_f(client, message):
