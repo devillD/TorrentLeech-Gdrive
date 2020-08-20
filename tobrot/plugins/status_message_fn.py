@@ -75,13 +75,13 @@ async def status_message_f(client, message):
         msg += " | "
         msg += f"{download_current_status}"
         msg += " | "
-        msg += f"<code>/cancel {current_gid}</code>"
+        msg += f"<code>/ucancel {current_gid}</code>"
         msg += " | "
         msg += "\n\n"
     LOGGER.info(msg)
 
     if msg == "":
-        msg = "🤷‍♂️ No Active, Queued or Paused TORRENTs"
+        msg = "No active, queued or paused torrents"
 
     currentTime = TimeFormatter((time.time() - BOT_START_TIME))
     total, used, free = shutil.disk_usage(".")
@@ -113,7 +113,7 @@ async def cancel_message_f(client, message):
             )
         except Exception as e:
             await i_m_s_e_g.edit_text(
-                "<i>FAILED</i>\n\n" + str(e) + "\n#error"
+                "<i>Faield</i>\n\n" + str(e) + "\n#error"
             )
     else:
         await message.delete()
@@ -164,7 +164,7 @@ async def exec_message_f(client, message):
 
 async def upload_document_f(client, message):
     imsegd = await message.reply_text(
-        "processing ..."
+        "Processing..."
     )
     if message.from_user.id in AUTH_CHANNEL:
         if " " in message.text:
